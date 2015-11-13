@@ -95,6 +95,7 @@ class RestMate extends RestOps {
       connection.addRequestProperty(k, v)
     }
     connection.setConnectTimeout(req.connectionTimeout)
+    connection.setReadTimeout(req.readTimeout)
     connection
   }
 

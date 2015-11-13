@@ -10,10 +10,17 @@ object RestMateRequestOptions {
 case class RestMateRequestOptions(headers: List[(String, String)] = Nil,
                                   followingRedirects: Boolean = false,
                                   connectionTimeout: Int = 5000,
+                                  readTimeout: Int = 10000,
                                   body: Option[InputStream] = None) {
 
-  def timeoutMs(ms: Int) =
+  @deprecated("Use connectionTimeoutMs", "1.0.1")
+  def timeoutMs(ms: Int) = connectionTimeoutMs(ms)
+
+  def connectionTimeoutMs(ms: Int) =
     copy(connectionTimeout = ms)
+
+  def readTimeoutMs(ms: Int) =
+    copy(readTimeout = ms)
 
   def contentType(contentType: String) =
     copy(headers = ("Content-Type" -> contentType) :: headers)

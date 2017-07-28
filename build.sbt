@@ -4,16 +4,17 @@ organization := "au.com.simplemachines"
 
 scalaVersion := "2.11.7"
 
+crossScalaVersions := Seq("2.11.7", "2.12.2")
+
 libraryDependencies ++= Seq(
-  "org.specs2" %% "specs2-core" % "3.6.2" % "test",
-  "org.specs2" %% "specs2-mock" % "3.6.2" % "test"
+  "org.specs2" %% "specs2-core" % "3.8.9" % "test",
+  "org.specs2" %% "specs2-mock" % "3.8.9" % "test"
 )
 
 resolvers += "scalaz-bintray" at "http://dl.bintray.com/scalaz/releases"
 
 scalacOptions ++= Seq(
   "-deprecation",
-  "-Xfatal-warnings",
   "-feature"
 )
 

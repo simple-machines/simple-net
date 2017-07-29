@@ -22,7 +22,7 @@ publishMavenStyle := true
 
 publishTo := Some {
   "simplemachines repo" at {
-    "http://nexus.simplemachines.com.au/content/repositories/" + {
+    "https://nexus.simplemachines.com.au/content/repositories/" + {
       if (version.value.trim.endsWith("SNAPSHOT")) "snapshots/" else "releases/"
     }
   }
